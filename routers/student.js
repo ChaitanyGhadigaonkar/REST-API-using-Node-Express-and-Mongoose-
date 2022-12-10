@@ -20,7 +20,10 @@ router.post("/students",async(req,res)=>{
     try{
         const student1=new Student(req.body);
         const CreateStudent=await student1.save();
-        res.status(201).send(CreateStudent);
+        
+        res.status(201).json(CreateStudent);
+        console.log(CreateStudent);
+
     }catch(err){
         res.status(400).send(err);
     }
